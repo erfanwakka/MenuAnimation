@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MenuAnimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQf-OU-84e">
+                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lQf-OU-84e" secondAttribute="height" multiplier="1:1" id="okn-Tf-6UF"/>
+                                    <constraint firstAttribute="width" constant="150" id="uNi-ny-pFG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4s-cg-eED">
+                                <rect key="frame" x="177" y="418" width="60" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lK3-vm-mUN">
+                                        <rect key="frame" x="15" y="15" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="lK3-vm-mUN" secondAttribute="height" multiplier="1:1" id="Amw-Tj-oVC"/>
+                                            <constraint firstAttribute="width" constant="30" id="ePh-5t-W3j"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="plus_icon"/>
+                                        <connections>
+                                            <action selector="didTapOnPlussButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4LP-k8-Ipm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="B4s-cg-eED" secondAttribute="height" multiplier="1:1" id="4DZ-Pj-uI5"/>
+                                    <constraint firstItem="lK3-vm-mUN" firstAttribute="centerX" secondItem="B4s-cg-eED" secondAttribute="centerX" id="5yu-Sh-RiJ"/>
+                                    <constraint firstItem="lK3-vm-mUN" firstAttribute="centerY" secondItem="B4s-cg-eED" secondAttribute="centerY" id="LYR-jh-4Zx"/>
+                                    <constraint firstAttribute="width" constant="60" id="YjN-3k-Nlp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.5" green="0.26889552700000002" blue="0.59908833184794519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="B4s-cg-eED" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VDo-qj-U6j"/>
+                            <constraint firstItem="lQf-OU-84e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gHP-4j-rT0"/>
+                            <constraint firstItem="lQf-OU-84e" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jbm-pg-VUg"/>
+                            <constraint firstItem="B4s-cg-eED" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qja-QN-LLY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="plusContainer" destination="B4s-cg-eED" id="3pj-dK-5H8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus_icon" width="512" height="512"/>
+    </resources>
+</document>
