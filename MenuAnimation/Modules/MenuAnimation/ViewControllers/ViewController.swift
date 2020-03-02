@@ -9,32 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    //MARK: IBOutlets
     
-    @IBOutlet weak var plusContainer: UIView!
+    //MARK: - Vars -
     
-    var placeButton = UIButton()
-    var activityButton = UIButton()
-    var storyButton = UIButton()
-    
-    //MARK: IBActions
-    
-    @IBAction func didTapOnPlussButton(_ sender: UIButton) {
-        if isAnimating { return }
-        isAnimating = true
-        animateButton(button: sender)
-        if animated {
-           animateOut()
-        } else {
-            animateIn()
-        }
-        animated = !animated
-        dispatchGroup.notify(queue: .main) {
-            self.isAnimating = false
-        }
-    }
-    //MARK: Vars
+    private var placeButton = UIButton()
+    private var activityButton = UIButton()
+    private var storyButton = UIButton()
+    private lazy var plusButton: PlusButton = {
+        let plusButton = PlusButton()
+        let plusWidth: CGFloat = 60
+        plusButton.frame = CGRect(x: view.center.x - plusWidth / 2, y: view.center.y - plusWidth / 2, width: plusWidth, height: plusWidth)
+        plusButton.addTarget(self, action: #selector(didTapOnPlussButton(_:)), for: .touchUpInside)
+        return plusButton
+    }()
     
     private var isAnimating = false
     private var animated = false
@@ -50,10 +37,15 @@ class ViewController: UIViewController {
     //MARK: Functions
     
     fileprivate func setupView() {
+        view.backgroundColor = #colorLiteral(red: 0.4980392157, green: 0.2705882353, blue: 0.6, alpha: 1)
+        
         setupButton(button: storyButton, title: "Story", backgroundColor: #colorLiteral(red: 1, green: 0.1857388616, blue: 0.5733950138, alpha: 1))
         setupButton(button: activityButton, title: "Activity", backgroundColor: #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 1))
         setupButton(button: placeButton, title: "Place", backgroundColor: #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1))
-        view.bringSubviewToFront(plusContainer)
+        
+        drawCircles()
+        
+        view.addSubview(plusButton)
     }
     fileprivate func setupButton(button: UIButton, title: String, backgroundColor: UIColor) {
         button.setTitle(title, for: .normal)
@@ -135,6 +127,35 @@ extension ViewController {
             }) { (_) in
                 self.dispatchGroup.leave()
             }
+        }
+    }
+}
+extension ViewController {
+    fileprivate func drawCircle(center: CGPoint, radius: CGFloat, fillColor: UIColor) {
+        let circlePath = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
+        let circle = CAShapeLayer()
+        circle.path = circlePath.cgPath
+        circle.fillColor = fillColor.cgColor
+        view.layer.addSublayer(circle)
+    }
+    fileprivate func drawCircles() {
+        drawCircle(center: view.center, radius: 60, fillColor: .darkGray)
+        drawCircle(center: view.center, radius: 40, fillColor: .white)
+    }
+}
+extension ViewController {
+    @objc fileprivate func didTapOnPlussButton(_ sender: UIButton) {
+        if isAnimating { return }
+        isAnimating = true
+        animateButton(button: sender)
+        if animated {
+           animateOut()
+        } else {
+            animateIn()
+        }
+        animated = !animated
+        dispatchGroup.notify(queue: .main) {
+            self.isAnimating = false
         }
     }
 }

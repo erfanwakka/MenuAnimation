@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B35035ED240D86060057D806 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35035EC240D86060057D806 /* PlusButton.swift */; };
 		B379F23B240D09A5005DD40F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B379F23A240D09A5005DD40F /* AppDelegate.swift */; };
 		B379F23D240D09A5005DD40F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B379F23C240D09A5005DD40F /* SceneDelegate.swift */; };
 		B379F23F240D09A5005DD40F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B379F23E240D09A5005DD40F /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B35035EC240D86060057D806 /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		B379F237240D09A5005DD40F /* MenuAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B379F23A240D09A5005DD40F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B379F23C240D09A5005DD40F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				B379F240240D09A5005DD40F /* Main.storyboard */,
+				B35035EC240D86060057D806 /* PlusButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				B379F23B240D09A5005DD40F /* AppDelegate.swift in Sources */,
 				B379F24F240D13A0005DD40F /* UIViewExtension.swift in Sources */,
 				B379F251240D4D8E005DD40F /* Animation.swift in Sources */,
+				B35035ED240D86060057D806 /* PlusButton.swift in Sources */,
 				B379F23D240D09A5005DD40F /* SceneDelegate.swift in Sources */,
 				B379F253240D4DAB005DD40F /* Constants.swift in Sources */,
 			);
